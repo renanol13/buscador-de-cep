@@ -1,9 +1,12 @@
 type searchProps = {
-  handleSearch: (cep: string) => Promise<void>;
+  handleSearch: (
+    cep: string,
+    setNumCep: React.Dispatch<React.SetStateAction<string>>
+  ) => Promise<void>;
+  
   isError: boolean;
   setIsError: React.Dispatch<React.SetStateAction<boolean>>;
 };
-
 
 import { useState } from "react";
 import { RiSearchLine } from "react-icons/ri";
@@ -15,7 +18,7 @@ function Search({ handleSearch, isError, setIsError }: searchProps) {
   const [search, setSearch] = useState<string>("");
 
   const clickCep = () => {
-      handleSearch(search);
+    handleSearch(search, setSearch);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
@@ -25,16 +28,16 @@ function Search({ handleSearch, isError, setIsError }: searchProps) {
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setIsError(false)
+    setIsError(false);
     const value = event.target.value;
     if (value.length <= 9) {
-      const newValueCep = maskCep(value)
-      setSearch(newValueCep);  
+      const newValueCep = maskCep(value);
+      setSearch(newValueCep);
     }
   };
 
   return (
-    <div className={`${styles.boxSearch} ${isError ? styles.error : ''}`}>
+    <div className={`${styles.boxSearch} ${isError ? styles.error : ""}`}>
       <input
         type="text"
         onChange={(event) => handleChange(event)}

@@ -13,8 +13,11 @@ function Home() {
   const [loading, setLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
 
-  const handleSearch = async (numCep: string) => {
-    setIsError(false);
+  const handleSearch = async (
+    numCep: string,
+    setNumCep: React.Dispatch<React.SetStateAction<string>>
+  ) => {
+
     setData(null);
     try {
       setLoading(true);
@@ -36,6 +39,7 @@ function Home() {
         return;
       }
 
+      setNumCep("")
       setData(dataCep);
     } catch (error) {
       setIsError(true);
