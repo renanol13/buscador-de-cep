@@ -1,5 +1,7 @@
 type searchProps = {
   handleSearch: (cep: string) => Promise<void>;
+  isError: boolean;
+  setIsError: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 
@@ -9,12 +11,11 @@ import { maskCep } from "../services/maskCep";
 
 import styles from "./search.module.css";
 
-function Search({ handleSearch }: searchProps) {
+function Search({ handleSearch, isError, setIsError }: searchProps) {
   const [search, setSearch] = useState<string>("");
 
   const clickCep = () => {
       handleSearch(search);
-      setSearch("");
   };
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
@@ -24,6 +25,7 @@ function Search({ handleSearch }: searchProps) {
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsError(false)
     const value = event.target.value;
     if (value.length <= 9) {
       const newValueCep = maskCep(value)
@@ -32,7 +34,7 @@ function Search({ handleSearch }: searchProps) {
   };
 
   return (
-    <div className={styles.boxSearch}>
+    <div className={`${styles.boxSearch} ${isError ? styles.error : ''}`}>
       <input
         type="text"
         onChange={(event) => handleChange(event)}

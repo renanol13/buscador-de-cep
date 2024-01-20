@@ -47,10 +47,14 @@ function Home() {
 
   return (
     <div className={styles.boxMain}>
-      {isError && <AlertMsg />}
       <div className={styles.boxHome}>
         <h1>Buscador de CEP!</h1>
-        <Search handleSearch={handleSearch} />
+        <Search
+          handleSearch={handleSearch}
+          isError={isError}
+          setIsError={setIsError}
+        />
+        {isError && <AlertMsg />}
         {loading ? <Loading /> : data && <InfoCep {...data} />}
       </div>
     </div>

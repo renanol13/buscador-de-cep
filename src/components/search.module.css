@@ -12,7 +12,6 @@
 .boxSearch input , .boxSearch button{
     background-color: transparent;
     border: none;
-    transition: .4s;
 }
 
 .boxSearch input{
@@ -28,6 +27,7 @@
 }
 
 .boxSearch button{
+    transition: .4s;
     margin-right: 10px;
 }
 
@@ -48,5 +48,13 @@
     width: 25px;
     height: 25px;
     color: rgb(123, 121, 121);
+}
+
+.boxSearch.error{
+    border: 1px solid red;
+}
+
+.boxSearch.error input{
+    color: red ;
 }
 
