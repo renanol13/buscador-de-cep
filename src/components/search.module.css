@@ -1,0 +1,52 @@
+
+.boxSearch{
+    background-color: #1c2c5db7;
+    border-radius: 10px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .3em;
+}
+
+.boxSearch input , .boxSearch button{
+    background-color: transparent;
+    border: none;
+    transition: .4s;
+}
+
+.boxSearch input{
+    border: none;
+    outline: none;
+    height: 40px;
+    padding: .3em;
+    font-size: 1em;
+    width: 90%;
+    color:white;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.boxSearch button{
+    margin-right: 10px;
+}
+
+.boxSearch button:hover{
+    opacity: 0.4;
+}
+
+
+.boxSearch input::placeholder{
+    color:rgb(123, 121, 121);
+    font-size: 1em;
+    font-weight: 600;
+    opacity:.7;
+}
+
+
+.boxSearch button svg{
+    width: 25px;
+    height: 25px;
+    color: rgb(123, 121, 121);
+}
+

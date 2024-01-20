@@ -1,0 +1,56 @@
+.boxInfoCep{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    background-color:rgb(123, 121, 121) ;
+    padding: .4em;
+    border-radius: 10px;
+    animation: dataAnimated .4s ease-in-out;
+}
+
+.boxInfoCep h2{
+    font-size: 2em;
+}
+
+.boxInfoCep p{
+    font-weight: 500;
+}
+
+.boxInfoCep p strong{
+    font-size: 1.1em;
+}
+
+#localidade{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.boxInfoCep div{
+    display: flex;
+}
+
+.boxInfoCep div p{
+    padding: .7em 2em;
+    gap: 10px;
+}
+
+.boxInfoCep div p:nth-child(1){
+    border-right: 2px solid #111625;
+}
+
+
+@media (min-width: 768px){
+    @keyframes dataAnimated{
+        from{
+            opacity: 0;
+            transform: scale(0);
+        }
+        to{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.boxMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+.boxHome{
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxHome  h1 {
+  color: rgb(123, 121, 121);
+  margin-bottom: 0.5em;
+}
+
